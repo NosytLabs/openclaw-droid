@@ -8,7 +8,8 @@
     "openclaw": "bin/openclaw"
   },
   "scripts": {
-    "postinstall": "node lib/postinstall.js"
+    "postinstall": "node lib/postinstall.js",
+    "test": "mocha --loader=esmock"
   },
   "keywords": [
     "openclaw",
@@ -48,5 +49,11 @@
     "chalk": "^5.3.0",
     "inquirer": "^9.2.12",
     "ora": "^7.0.1"
+  },
+  "devDependencies": {
+    "chai": "^6.2.2",
+    "esmock": "^2.7.3",
+    "mocha": "^11.7.5",
+    "sinon": "^21.0.1"
   }
 }
