@@ -1,7 +1,7 @@
 #!/bin/bash
 #
-# ClawDroid Installer
-# One-liner: curl -fsSL https://raw.githubusercontent.com/NOSYTLABS/clawdroid/main/install.sh | bash
+# OpenClaw Droid Installer
+# One-liner: curl -fsSL https://raw.githubusercontent.com/NosytLabs/openclaw-droid/main/install.sh | bash
 #
 
 set -e
@@ -15,7 +15,7 @@ NC='\033[0m'
 
 echo -e "${BLUE}"
 echo "-------------------------------------------"
-echo "        ClawDroid Installer v1.0.0"
+echo "      OpenClaw Droid Installer v1.0.0"
 echo "-------------------------------------------"
 echo -e "${NC}"
 
@@ -42,9 +42,9 @@ echo -e "  ${GREEN}✓${NC} proot-distro installed"
 echo -e "  ${GREEN}✓${NC} adb $(adb version | head -n 1)"
 echo -e "  ${GREEN}✓${NC} termux-api installed"
 
-# Install clawdroid from npm
-echo -e "\n${BLUE}[2/3]${NC} Installing clawdroid..."
-npm install -g clawdroid
+# Install openclaw-droid from npm
+echo -e "\n${BLUE}[2/3]${NC} Installing OpenClaw Droid..."
+npm install -g openclaw-droid
 
 echo -e "\n${BLUE}[3/3]${NC} Verifying Android tools..."
 adb start-server >/dev/null 2>&1 || true
@@ -55,10 +55,10 @@ echo -e "${GREEN}Installation complete!${NC}"
 echo -e "${GREEN}═══════════════════════════════════════════${NC}"
 echo ""
 echo -e "${YELLOW}Next steps:${NC}"
-echo "  1. Run setup:      clawdroid setup"
-echo "  2. Run onboarding: clawdroid onboarding"
+echo "  1. Run setup:      openclaw setup"
+echo "  2. Run onboarding: openclaw onboarding"
 echo "     → Select 'Loopback (127.0.0.1)' when asked!"
-echo "  3. Start gateway:  clawdroid start"
+echo "  3. Start gateway:  openclaw start"
 echo ""
 echo -e "Dashboard: ${BLUE}http://127.0.0.1:18789${NC}"
 echo ""

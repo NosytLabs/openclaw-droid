@@ -1,11 +1,11 @@
 {
-  "name": "clawdroid",
+  "name": "openclaw-droid",
   "version": "1.0.0",
-  "description": "ClawDroid - Optimized OpenClaw AI Gateway for Android Termux",
+  "description": "OpenClaw Droid - Optimized OpenClaw AI Gateway for Android Termux",
   "main": "lib/index.js",
   "type": "module",
   "bin": {
-    "clawdroid": "bin/clawdroid"
+    "openclaw": "bin/openclaw"
   },
   "scripts": {
     "postinstall": "node lib/postinstall.js"
@@ -17,24 +17,32 @@
     "ai",
     "gateway",
     "gemini",
-    "claude"
+    "claude",
+    "openclaw-termux",
+    "openclaw-droid",
+    "clawdroid",
+    "ai-gateway",
+    "android-ai",
+    "termux-ai",
+    "openclaw-droid"
   ],
   "author": "NOSYTLABS",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NOSYTLABS/clawdroid.git"
+    "url": "git+https://github.com/NosytLabs/openclaw-droid.git"
   },
-  "homepage": "https://github.com/NOSYTLABS/clawdroid#readme",
+  "homepage": "https://github.com/NosytLabs/openclaw-droid#readme",
   "bugs": {
-    "url": "https://github.com/NOSYTLABS/clawdroid/issues"
+    "url": "https://github.com/NosytLabs/openclaw-droid/issues"
   },
   "engines": {
     "node": ">=18.0.0"
   },
   "os": [
     "android",
-    "linux"
+    "linux",
+    "win32"
   ],
   "dependencies": {
     "chalk": "^5.3.0",
