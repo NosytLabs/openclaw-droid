@@ -1,25 +1,25 @@
-# ClawDroid 🤖
+# OpenClaw Droid 🤖
 
 > **Run OpenClaw AI Gateway on Android via Termux**
 > One-command setup. Optimized for mobile. Bionic Bypass included.
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-Android%20%7C%20Termux-green.svg)
-![Version](https://img.shields.io/badge/version-1.0.0-orange.svg)
+![Version](https://img.shields.io/npm/v/openclaw-droid.svg)
 
-**ClawDroid** makes running [OpenClaw](https://github.com/openclaw/openclaw) on Android effortless. It handles the environment setup (proot-distro, Ubuntu, Node.js) and fixes Android-specific issues automatically.
+**OpenClaw Droid** makes running [OpenClaw](https://github.com/openclaw/openclaw) on Android effortless. It handles the environment setup (proot-distro, Ubuntu, Node.js) and fixes Android-specific issues automatically.
 
-## 🚀 Why ClawDroid?
+## 🚀 Why OpenClaw Droid?
 
 Running standard Node.js AI tools on Android is painful because of:
 *   **Bionic libc**: Android's C library differs from Linux (glibc), breaking `os.networkInterfaces()` and DNS lookups.
 *   **Permissions**: Termux has restricted access to system resources.
 *   **Environment**: Many tools expect a full Linux userland (Ubuntu/Debian).
 
-**ClawDroid solves this by:**
+**OpenClaw Droid solves this by:**
 1.  Creating a lightweight **Ubuntu** container inside Termux.
 2.  Injecting a **Bionic Bypass** script to fix networking.
-3.  Providing a simple CLI (`clawdroid`) to manage the gateway.
+3.  Providing a simple CLI (`openclaw`) to manage the gateway.
 
 ## 📦 Installation
 
@@ -32,14 +32,14 @@ Running standard Node.js AI tools on Android is painful because of:
 Open Termux and run:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/NOSYTLABS/clawdroid/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/NosytLabs/openclaw-droid/main/install.sh | bash
 ```
 
 Or via npm:
 
 ```bash
-npm install -g clawdroid
-clawdroid setup
+npm install -g openclaw-droid
+openclaw setup
 ```
 
 ## 🎮 Usage
@@ -48,7 +48,7 @@ clawdroid setup
 First, configure your API keys:
 
 ```bash
-clawdroid onboarding
+openclaw onboarding
 ```
 > **IMPORTANT:** Select **Loopback (127.0.0.1)** for Binding.
 
@@ -56,7 +56,7 @@ clawdroid onboarding
 Launch the OpenClaw gateway:
 
 ```bash
-clawdroid start
+openclaw start
 ```
 The dashboard will be available at: **http://127.0.0.1:18789**
 
@@ -64,17 +64,17 @@ The dashboard will be available at: **http://127.0.0.1:18789**
 
 | Command | Description |
 | :--- | :--- |
-| `clawdroid status` | Check installation health |
-| `clawdroid update` | Update OpenClaw to the latest version |
-| `clawdroid shell` | Open the Ubuntu shell |
-| `clawdroid repair` | Re-install dependencies if broken |
-| `clawdroid <cmd>` | Run any OpenClaw command (e.g., `clawdroid doctor`) |
+| `openclaw status` | Check installation health |
+| `openclaw update` | Update OpenClaw to the latest version |
+| `openclaw shell` | Open the Ubuntu shell |
+| `openclaw repair` | Re-install dependencies if broken |
+| `openclaw <cmd>` | Run any OpenClaw command (e.g., `openclaw doctor`) |
 
 ## 🧩 Architecture
 
 ```mermaid
 graph TD
-    A[User] -->|clawdroid start| B(Termux)
+    A[User] -->|openclaw start| B(Termux)
     B -->|proot-distro| C{Ubuntu Container}
     C -->|Bionic Bypass| D[OpenClaw Gateway]
     D -->|HTTP| E[Web Dashboard]
@@ -84,8 +84,8 @@ graph TD
 ## ⚠️ Troubleshooting
 
 **"Setup not complete" error**
-*   Run `clawdroid setup` again.
-*   If it persists, run `clawdroid repair`.
+*   Run `openclaw setup` again.
+*   If it persists, run `openclaw repair`.
 
 **Process killed in background**
 *   Go to Android Settings → Apps → Termux → Battery → **Unrestricted**.
