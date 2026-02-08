@@ -8,6 +8,7 @@
     "openclaw": "bin/openclaw"
   },
   "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "postinstall": "node lib/postinstall.js"
   },
   "keywords": [
@@ -48,5 +49,8 @@
     "chalk": "^5.3.0",
     "inquirer": "^9.2.12",
     "ora": "^7.0.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
