@@ -1,0 +1,9 @@
+node_modules/
+*.log
+.DS_Store
+.env
+.env.local
+*.tgz
+coverage/
+.nyc_output/
+.npmrc

@@ -1,0 +1,33 @@
+# Development files
+.github/
+.git/
+.gitignore
+
+# Config files
+eslint.config.js
+.eslintrc*
+
+# Test files
+lib/test.js
+*.test.js
+*.spec.js
+
+# Documentation (README is included by default)
+CHANGELOG.md
+CONTRIBUTING.md
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

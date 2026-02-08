@@ -1,0 +1,44 @@
+{
+  "name": "clawdroid",
+  "version": "1.0.0",
+  "description": "ClawDroid - Optimized OpenClaw AI Gateway for Android Termux",
+  "main": "lib/index.js",
+  "type": "module",
+  "bin": {
+    "clawdroid": "bin/clawdroid"
+  },
+  "scripts": {
+    "postinstall": "node lib/postinstall.js"
+  },
+  "keywords": [
+    "openclaw",
+    "termux",
+    "android",
+    "ai",
+    "gateway",
+    "gemini",
+    "claude"
+  ],
+  "author": "NOSYTLABS",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NOSYTLABS/clawdroid.git"
+  },
+  "homepage": "https://github.com/NOSYTLABS/clawdroid#readme",
+  "bugs": {
+    "url": "https://github.com/NOSYTLABS/clawdroid/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "os": [
+    "android",
+    "linux"
+  ],
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "inquirer": "^9.2.12",
+    "ora": "^7.0.1"
+  }
+}
