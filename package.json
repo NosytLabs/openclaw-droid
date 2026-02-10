@@ -4,7 +4,6 @@
   "description": "Simplified Installer based on Sagar Tamang's Guide",
   "files": [
     "install.sh",
-    "hijack.js",
     "README.md",
     "LICENSE"
   ],
@@ -13,6 +12,12 @@
     "termux",
     "android",
     "ai",
+    "ai-agent",
+    "ai-agent-phone",
+    "clawphone",
+    "clawdbot",
+    "moltbot",
+    "moltbot-android",
     "gateway",
     "sagar-tamang-guide",
     "bionic-bypass"

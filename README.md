@@ -13,6 +13,10 @@ This installer automates the exact steps from the "Bionic Bypass" guide to run O
 - **Automated Setup**: Installs Node 22, OpenClaw, and the Bionic Bypass automatically.
 - **Zero Root**: Runs in Termux + proot-distro.
 
+## Keywords
+
+clawphone, moltbot android, clawdbot, ai agent phone
+
 ## Installation
 
 Run this single command in Termux:
@@ -52,6 +56,13 @@ openclaw config
 ```bash
 openclaw gateway --verbose
 ```
+
+## Resources
+
+- [Sagar Tamang's Original Guide](https://sagartamang.com/blog/openclaw-on-android-termux)
+- [OpenClaw Documentation](https://github.com/openclaw/openclaw)
+- [Termux Wiki](https://wiki.termux.com/wiki/Main_Page)
+- [Node.js on Android](https://nodejs.org/en/docs/guides/nodejs-on-android/)
 
 ## Termux Controls & Tips
 
