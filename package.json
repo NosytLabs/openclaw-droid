@@ -1,0 +1,30 @@
+{
+  "name": "openclaw-droid",
+  "version": "5.2.2",
+  "description": "Simplified Installer based on Sagar Tamang's Guide",
+  "files": [
+    "install.sh",
+    "hijack.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "openclaw",
+    "termux",
+    "android",
+    "ai",
+    "gateway",
+    "sagar-tamang-guide",
+    "bionic-bypass"
+  ],
+  "author": "NosytLabs",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NosytLabs/openclaw-droid.git"
+  },
+  "homepage": "https://github.com/NosytLabs/openclaw-droid#readme",
+  "bugs": {
+    "url": "https://github.com/NosytLabs/openclaw-droid/issues"
+  }
+}
