@@ -47,7 +47,12 @@ pkg upgrade -y -o Dpkg::Options::="--force-confnew" || { fix_termux; pkg upgrade
 pkg install proot-distro -y
 
 # Install & Login to Ubuntu
-proot-distro install ubuntu
+if proot-distro list | grep -q "ubuntu.*(installed)" || proot-distro list | grep -A 2 "Alias: ubuntu" | grep -q "Installed: yes"; then
+    echo "✅ Ubuntu is already installed."
+else
+    echo "⬇️  Installing Ubuntu..."
+    proot-distro install ubuntu
+fi
 proot-distro login ubuntu << 'EOF'
 #!/bin/bash
 set -e
