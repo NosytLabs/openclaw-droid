@@ -16,10 +16,28 @@ fix_termux() {
 echo "🔄 Updating Termux packages..."
 
 # Run repair first if previous state was bad
-if [ -f /var/lib/dpkg/lock ] || [ -f /var/lib/dpkg/lock-frontend ]; then
-    echo "🔒 Removing stale lock files..."
-    rm -f /var/lib/dpkg/lock /var/lib/dpkg/lock-frontend
+DPKG_LOCKS="/var/lib/dpkg/lock /var/lib/dpkg/lock-frontend"
+if [ -n "$PREFIX" ]; then
+    DPKG_LOCKS="$DPKG_LOCKS $PREFIX/var/lib/dpkg/lock $PREFIX/var/lib/dpkg/lock-frontend"
 fi
+
+for lock_file in $DPKG_LOCKS; do
+    if [ -f "$lock_file" ]; then
+        # Check if the lock is actually held by a process
+        if command -v fuser >/dev/null 2>&1; then
+            if fuser "$lock_file" >/dev/null 2>&1; then
+                echo "❌ Error: $lock_file is held by another process."
+                echo "Please wait for other package management operations to finish and try again."
+                exit 1
+            fi
+        elif pgrep -x "dpkg" >/dev/null || pgrep -x "apt" >/dev/null || pgrep -x "apt-get" >/dev/null; then
+            echo "❌ Error: Package manager is already running. Cannot safely remove $lock_file"
+            exit 1
+        fi
+        echo "🔒 Removing stale lock file: $lock_file"
+        rm -f "$lock_file"
+    fi
+done
 dpkg --configure -a || true
 
 # Try update/upgrade with fallback to repair
