@@ -66,7 +66,12 @@ npm install -g openclaw@latest
 # 3. The "Bionic Bypass" (Crucial)
 cat << 'JS' > /root/hijack.js
 const os = require('os');
-os.networkInterfaces = () => ({});
+const isTarget = process.argv.some(arg => typeof arg === 'string' && (arg.endsWith('/openclaw') || arg.endsWith('\\openclaw')));
+
+if (process.env.OPENCLAW_BIONIC_BYPASS === '1' || isTarget) {
+    process.env.OPENCLAW_BIONIC_BYPASS = '1';
+    os.networkInterfaces = () => ({});
+}
 JS
 
 # Make it permanent for all OpenClaw commands
