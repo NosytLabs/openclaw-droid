@@ -70,7 +70,9 @@ os.networkInterfaces = () => ({});
 JS
 
 # Make it permanent for all OpenClaw commands
-echo 'export NODE_OPTIONS="-r /root/hijack.js"' >> ~/.bashrc
+if ! grep -q 'export NODE_OPTIONS="-r /root/hijack.js"' ~/.bashrc; then
+    echo 'export NODE_OPTIONS="-r /root/hijack.js"' >> ~/.bashrc
+fi
 source ~/.bashrc
 
 # Export for current session
