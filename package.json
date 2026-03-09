@@ -2,6 +2,9 @@
   "name": "openclaw-droid",
   "version": "5.2.2",
   "description": "Simplified Installer based on Sagar Tamang's Guide",
+  "scripts": {
+    "test": "bash -n install.sh"
+  },
   "files": [
     "install.sh",
     "README.md",
